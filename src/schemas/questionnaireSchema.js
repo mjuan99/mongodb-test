@@ -75,6 +75,6 @@ const questionnaireSchema = new Schema({
             match: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
         }
     }
-});
+}, {versionKey: false});
 
-module.exports = questionnaireSchema;
+module.exports = mongoose.model('Questionnaire', questionnaireSchema);

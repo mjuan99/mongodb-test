@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
-const questionnaireSchema = require('../schemas/questionnaireSchema.js');
-const Questionnaire = mongoose.model('Questionnaire', questionnaireSchema);
+const Questionnaire = require('../schemas/questionnaireSchema.js');
 
 async function getQuestionnaireController(req, res){
     try{
-        const id = req.params.id;
-        const questionnaire = await Questionnaire.findById(id);
+        const questionnaire = await findQuestionnaire(Questionnaire, req.params.id);
         if(questionnaire != null)
             res.status(200).json({data: questionnaire});
         else
@@ -16,4 +14,8 @@ async function getQuestionnaireController(req, res){
     }
 }
 
-module.exports = getQuestionnaireController;
+async function findQuestionnaire(questionnaireModel, questionnaireId){
+    return await questionnaireModel.findById(questionnaireId, 'date sleep training organizationTime screenUsage drinks _id');
+}
+
+module.exports = {getQuestionnaireController, findQuestionnaire};

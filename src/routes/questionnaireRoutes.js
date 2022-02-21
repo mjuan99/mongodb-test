@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const postQuestionnaireController = require('../controllers/postQuestionnaireController.js');
-const getQuestionnaireController = require('../controllers/getQuestionnaireController.js');
+const {postQuestionnaireController} = require('../controllers/postQuestionnaireController.js');
+const {getQuestionnaireController} = require('../controllers/getQuestionnaireController.js');
 
 
 router.post("/", postQuestionnaireController);

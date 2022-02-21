@@ -1,20 +1,26 @@
 const mongoose = require('mongoose');
-const questionnaireSchema = require('../schemas/questionnaireSchema.js');
-const Questionnaire = mongoose.model('Questionnaire', questionnaireSchema);
+const Questionnaire = require('../schemas/questionnaireSchema.js');
 
 async function postQuestionnaireController(req, res){
     try{
-        const newQuestionnaire = new Questionnaire(req.body);
-        if(newQuestionnaire.validateSync() == undefined){
-            const savedQuestionnaire = await newQuestionnaire.save();
-            res.status(201).json({data: savedQuestionnaire});
-        }
+        const questionnaire = await createQuestionnaire(Questionnaire, req.body);
+        if(questionnaire)
+            res.status(201).json({data: questionnaire});
         else
             res.status(400).send("Bad Request");
     }
-    catch{
+    catch(err){
+        console.log(err);
         res.status(500).send("Server Error");
     }
 }
 
-module.exports = postQuestionnaireController;
+async function createQuestionnaire(questionnaireModel, questionnaireData){
+    const questionnaire = new questionnaireModel(questionnaireData);
+    if(questionnaire.validateSync() == undefined)
+        return await questionnaire.save();
+    else
+        return null;
+}
+
+module.exports = {postQuestionnaireController, createQuestionnaire};
