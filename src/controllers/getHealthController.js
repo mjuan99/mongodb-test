@@ -1,5 +1,5 @@
+const mongoose = require('mongoose');
 async function getHealthController(req, res){
-    const mongoose = require('mongoose');
     try{
         await mongoose.connect(process.env.DB_URL);
         res.status(200).send("OK");
