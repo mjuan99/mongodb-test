@@ -1,0 +1,1 @@
+module.exports = {MIGRATE_dbConnectionUri: 'mongodb+srv://root:root@cluster0.wstad.mongodb.net/questionnaires?retryWrites=true&w=majority'};

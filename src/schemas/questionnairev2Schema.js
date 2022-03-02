@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const questionnaireSchema = new Schema({
-    new2: String,
-    userID: {
+    studentID: {
         type: Number,
         min: 1,
         required: true
