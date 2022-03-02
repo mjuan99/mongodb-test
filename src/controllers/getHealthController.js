@@ -1,12 +1,9 @@
 const mongoose = require('mongoose');
 async function getHealthController(req, res){
-    try{
-        await mongoose.connect(process.env.DB_URL);
-        res.status(200).send("OK");
-    }
-    catch{
-        res.status(500).send("Server Error");
-    }
+    if(mongoose.STATES[mongoose.connection.readyState] == "connected")
+        res.status(200).json({message: 'OK'});
+    else
+        res.status(500).json({error: 'Server Error'});
 }
 
 module.exports = getHealthController;
