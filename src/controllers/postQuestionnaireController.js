@@ -7,11 +7,11 @@ async function postQuestionnaireController(req, res){
         if(questionnaire)
             res.status(201).json({data: questionnaire});
         else
-            res.status(400).send("Bad Request");
+            res.status(400).json({error: 'Bad Request'});
     }
     catch(err){
         console.log(err);
-        res.status(500).send("Server Error");
+        res.status(500).json({error: 'Server Error'});
     }
 }
 

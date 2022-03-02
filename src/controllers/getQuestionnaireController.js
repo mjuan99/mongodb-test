@@ -10,13 +10,13 @@ async function getQuestionnaireController(req, res){
             if(questionnaire != null)
                 res.status(200).json({data: questionnaire});
             else
-                res.status(404).send("Not Found");
+                res.status(404).json({error: 'Not Found'});
         }else
-            res.status(400).send("Bad Request");
+            res.status(400).json({error: 'Bad Request'});
     }
     catch(err){
         console.log(err);
-        res.status(500).send("Server Error");
+        res.status(500).json({error: 'Server Error'});
     }
 }
 
