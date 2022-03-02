@@ -14,7 +14,7 @@ const questionnaireSchema = new Schema({
     training: {
         time: {
             type: String,
-            match: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
+            match: /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/
         }
     },
     organizationTime: {
@@ -68,11 +68,11 @@ const questionnaireSchema = new Schema({
         },
         goToBed: {
             type: String,
-            match: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
+            match: /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/
         },
         wakeUp: {
             type: String,
-            match: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
+            match: /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/
         }
     }
 }, {versionKey: false});
