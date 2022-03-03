@@ -7,6 +7,7 @@ MongoDB Test.
 ```
 npm install
 ```
+create `.env` file following `.env.sample`
 
 ## Usage
 
