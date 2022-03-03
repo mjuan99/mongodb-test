@@ -1,4 +1,4 @@
-const {createQuestionnaire} = require('../controllers/postQuestionnaireController');
+const {createQuestionnaire} = require('../controllers/questionnaires/postQuestionnaireController');
 
 describe('create questionnaire', () => {
     test('given an invalid input it should return null', async () => {

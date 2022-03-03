@@ -1,4 +1,4 @@
-const {findQuestionnaire} = require('../controllers/getQuestionnaireController');
+const {findQuestionnaire} = require('../controllers/questionnaires/getQuestionnaireController');
 
 describe('get questionnaire by id', () => {
     test('given an invalid id it should return null', async () => {

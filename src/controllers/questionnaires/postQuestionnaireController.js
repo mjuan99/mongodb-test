@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Questionnaire = require('../schemas/questionnaireSchema.js');
+const Questionnaire = require('../../schemas/questionnaireSchema.js');
 
 async function postQuestionnaireController(req, res){
     try{
