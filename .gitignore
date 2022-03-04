@@ -76,3 +76,4 @@ typings/
 .fusebox/
 
 querysTest.js
+error.log

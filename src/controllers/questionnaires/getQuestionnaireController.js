@@ -1,22 +1,31 @@
 const mongoose = require('mongoose');
 const Questionnaire = require('../../schemas/questionnaireSchema.js');
 
+const winston = require('winston');
+const requestLogger = winston.loggers.get('request-logger');
+
 async function getQuestionnaireController(req, res){
+    const id = req.params.id;
+    requestLogger.info('Starting GET /questionnaire/:id', {questionnaireId: id});
     try{
-        const id = req.params.id;
-        let questionnaire = null;
         if(mongoose.Types.ObjectId.isValid(id)){
-            questionnaire = await findQuestionnaire(Questionnaire, id);
-            if(questionnaire != null)
+            const questionnaire = await findQuestionnaire(Questionnaire, id);
+            if(questionnaire != null){
                 res.status(200).json({data: questionnaire});
-            else
+                requestLogger.info('Response GET /questionnaire/:id', {status: 200, questionnaireId: id, questionnaire: questionnaire});
+            }
+            else{
                 res.status(404).json({error: 'Not Found'});
-        }else
+                requestLogger.info('Response GET /questionnaire/:id', {status: 404,questionnaireId: id});
+            }
+        }else{
             res.status(400).json({error: 'Bad Request'});
+            requestLogger.info('Response GET /questionnaire/:id', {status: 400, questionnaireId: id});
+        }
     }
     catch(err){
-        console.log(err);
         res.status(500).json({error: 'Server Error'});
+        requestLogger.error('Response GET /questionnaire/:id', {status: 500, questionnaireId: id, error: String(err)});
     }
 }
 
