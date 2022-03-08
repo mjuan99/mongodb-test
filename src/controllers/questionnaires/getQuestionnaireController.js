@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Questionnaire = require('../../schemas/questionnaireSchema.js');
 
-const winston = require('winston');
-const requestLogger = winston.loggers.get('request-logger');
+const {requestLogger} = require('../../logger/logger');
 
 async function getQuestionnaireController(req, res){
     const id = req.params.id;
+    const startTime = process.hrtime.bigint();
     requestLogger.info('Starting GET /questionnaire/:id', {requestID: req.id});
     requestLogger.debug('Questionnaire ID GET /questionnaire/:id', {requestID: req.id, questionnaireId: id})
     try{
@@ -13,17 +13,17 @@ async function getQuestionnaireController(req, res){
             const questionnaire = await findQuestionnaire(Questionnaire, id);
             if(questionnaire != null){
                 res.status(200).json({data: questionnaire});
-                requestLogger.info('Response GET /questionnaire/:id', {requestID: req.id, status: 200});
+                requestLogger.info('Response GET /questionnaire/:id', {requestID: req.id, startTime: startTime, status: 200});
                 requestLogger.debug('Questionnaire response GET /questionnaire/:id', {requestID: req.id, questionnaire: questionnaire})
             }
             else{
                 res.status(404).json({error: 'Not Found'});
-                requestLogger.info('Response GET /questionnaire/:id', {requestID: req.id, status: 404});
+                requestLogger.info('Response GET /questionnaire/:id', {requestID: req.id, startTime: startTime, status: 404});
                 requestLogger.debug('Not Found questionnaireId GET /questionnaire/:id', {requestID: req.id, questionnaireId: id})
             }
         }else{
             res.status(400).json({error: 'Bad Request'});
-            requestLogger.info('Response GET /questionnaire/:id', {requestID: req.id, status: 400});
+            requestLogger.info('Response GET /questionnaire/:id', {requestID: req.id, startTime: startTime, status: 400});
             requestLogger.debug('Invalid questionnaireId GET /questionnaire/:id', {requestID: req.id, questionnaireId: id})
         }
     }
