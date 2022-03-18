@@ -3,8 +3,7 @@ const { Schema } = mongoose;
 
 const questionnaireSchema = new Schema({
     userID: {
-        type: Number,
-        min: 1,
+        type: String,
         required: true
     },
     date: {
