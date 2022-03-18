@@ -13,7 +13,12 @@ function getRefreshToken(user){
 }
 
 function deleteToken(refreshToken){
-    refreshTokens = refreshTokens.filter(token => token != refreshToken);
+    if(refreshTokens.includes(refreshToken)){
+        refreshTokens = refreshTokens.filter(token => token != refreshToken);
+        return true;
+    }
+    else
+        return false;
 }
 
 function refreshExpiredToken(refreshToken){
