@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "e6f4c140-2e59-4b58-8e1b-fbefdf6802a9",
+		"name": "MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get questionnaire",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDc4NzQ0OTUsImV4cCI6MTY0Nzg3NDUxMH0.ZIs_OLL0L89ZtWCtePVB5IzkjIGw_LKslcJddLts51k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/questionnaire/62139dc9254e5d607397c689",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questionnaire",
+						"62139dc9254e5d607397c689"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post questionnaire",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDc4NzM4MzcsImV4cCI6MTY0Nzg3Mzg1Mn0.t9sCLIKtVvnq8Gzh3E3cU4NX5Q72rDod_QaMjiVdbZY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2022-02-09\",\r\n    \"training\": {\r\n        \"time\": \"00:30\"\r\n    },\r\n    \"organizationTime\": {\r\n        \"toolType\": {\r\n        \"app\": true,\r\n        \"schedule\": false,\r\n        \"notes\": false,\r\n        \"mobile\": true\r\n        }\r\n    },\r\n    \"screenUsage\": {\r\n        \"beforeSleep\": {\r\n        \"mobile\": true,\r\n        \"tv\": false,\r\n        \"tablet\": false,\r\n        \"computer\": true\r\n        },\r\n        \"socialNetworksVideoGames\": true\r\n    },\r\n    \"drinks\": {\r\n        \"frequency\": {\r\n        \"water\": 1,\r\n        \"suggaryDrinks\": 2,\r\n        \"energyDrinks\": 4,\r\n        \"caffeinatedDrinks\": 2,\r\n        \"alcohol\": 2\r\n        }\r\n    },\r\n    \"sleep\": {\r\n        \"quality\": {\r\n        \"terrible\": false,\r\n        \"bad\": false,\r\n        \"neutral\": false,\r\n        \"satisfied\": true,\r\n        \"excelent\": false\r\n        },\r\n        \"goToBed\": \"23:30\",\r\n        \"wakeUp\": \"06:30\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/questionnaire",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questionnaire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get refresh",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDc4NzQ0NTZ9.3hnti2me_KsC_jvtwBPSnJjn7k-1-3mQLdtK0MXCA5E\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDc4NzQ0NTZ9.3hnti2me_KsC_jvtwBPSnJjn7k-1-3mQLdtK0MXCA5E\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get auth/google",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/auth/google",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"google"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get auth/facebook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/auth/facebook",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"facebook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

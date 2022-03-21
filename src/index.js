@@ -9,19 +9,13 @@ requestLogger.debug('Debugging');
 const express = require('express');
 const requestID = require('express-request-id');
 const app = express();
-/*const session = require('express-session');
-app.use(session({
-    resave: false,
-    saveUninitialized: true,
-    secret: process.env.SECRET
-}));*/
 app.use(express.json());
 app.use(requestID());
-
 const passport = require('passport');
-
 app.use(passport.initialize());
-//app.use(passport.session());
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 const healthRoutes = require('./routes/healthRoutes');
 const questionnaireRoutes = require('./routes/questionnaireRoutes');
