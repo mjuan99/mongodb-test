@@ -25,7 +25,7 @@ function refreshExpiredToken(refreshToken){
     if(!refreshTokens.includes(refreshToken)) return null;
     try{
         const user = jwt.verify(refreshToken, process.env.SECRET_REFRESH_TOKEN);
-        return jwt.sign({email: user.email}, process.env.SECRET_ACCESS_TOKEN, {expiresIn: '15s'});
+        return jwt.sign({email: user.email}, process.env.SECRET_ACCESS_TOKEN, {expiresIn: process.env.TOKEN_EXPIRATION_TIME});
     }
     catch{
         return null;

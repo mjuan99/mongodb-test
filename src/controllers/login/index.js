@@ -1,3 +1,4 @@
+const authGoogle = require('./authGoogleController');
 const authApple = require('./authAppleController');
 const authFacebook = require('./authFacebookController');
 const {callbackController} = require('./callbackController');
