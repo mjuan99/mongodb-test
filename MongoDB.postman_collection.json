@@ -12,12 +12,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDc4NzQ0OTUsImV4cCI6MTY0Nzg3NDUxMH0.ZIs_OLL0L89ZtWCtePVB5IzkjIGw_LKslcJddLts51k",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDg0NzI1MjgsImV4cCI6MTY0ODQ3MjgyOH0.l3xNgR7cOkdubfH33nlGUspajnCO9z_5PLzGGy7v59E",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/questionnaire/62139dc9254e5d607397c689",
+					"raw": "https://localhost:3000/questionnaire/62139dc9254e5d607397c689",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
@@ -51,7 +52,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/questionnaire",
+					"raw": "https://localhost:3000/questionnaire",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
@@ -69,7 +71,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/health",
+					"raw": "https://localhost:3000/health",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
@@ -91,7 +94,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDc4NzQ0NTZ9.3hnti2me_KsC_jvtwBPSnJjn7k-1-3mQLdtK0MXCA5E\"\r\n}",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDg0NzE4MDZ9.G2Hw9ZoC1G2wcUk1N0SdyG1g2Efsj2s-XMWZ2xo2RvY\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,7 +102,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/refresh",
+					"raw": "https://localhost:3000/refresh",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
@@ -121,7 +125,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDc4NzQ0NTZ9.3hnti2me_KsC_jvtwBPSnJjn7k-1-3mQLdtK0MXCA5E\"\r\n}",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5tYXJ0ZW45OUBnbWFpbC5jb20iLCJpYXQiOjE2NDg0NzE4MDZ9.G2Hw9ZoC1G2wcUk1N0SdyG1g2Efsj2s-XMWZ2xo2RvY\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -129,7 +133,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/logout",
+					"raw": "https://localhost:3000/logout",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
@@ -147,7 +152,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/auth/google",
+					"raw": "https://localhost:3000/auth/google",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
@@ -166,7 +172,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/auth/facebook",
+					"raw": "https://localhost:3000/auth/facebook",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],

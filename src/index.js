@@ -22,11 +22,19 @@ const questionnaireRoutes = require('./routes/questionnaireRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 app.use('/health', healthRoutes);
 app.use('/questionnaire', questionnaireRoutes);
-app.use('/', loginRoutes)
+app.use('/', loginRoutes);
 
+const https = require('https');
+const fs = require('fs');
 
-app.listen(process.env.PORT, async () => {
-    requestLogger.info('Server starting');
-    await mongoose.connect(process.env.DB_URL);
-    console.log("Listening in port " + process.env.PORT)
-});
+https.createServer({
+        key: fs.readFileSync(process.env.HTTPS_KEY_LOCATION),
+        cert: fs.readFileSync(process.env.HTTPS_CERT_LOCATION)
+    }, 
+    app)
+    .listen(process.env.PORT, async () => {
+        requestLogger.info('Server starting');
+        await mongoose.connect(process.env.DB_URL);
+        console.log("Listening in port " + process.env.PORT);
+    }
+);
