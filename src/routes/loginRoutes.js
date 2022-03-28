@@ -7,7 +7,7 @@ router.get('/auth/google', authGoogle.loginController);
 router.get('/auth/google/callback', authGoogle.redirectController, callbackController);
 
 router.get('/auth/apple', authApple.loginController);
-router.get('/auth/apple/callback', authApple.redirectController, callbackController);
+router.post('/auth/apple/callback', authApple.redirectController, callbackController);
 
 router.get('/auth/facebook', authFacebook.loginController);
 router.get('/auth/facebook/callback', authFacebook.redirectController, callbackController);
